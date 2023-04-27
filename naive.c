@@ -34,7 +34,6 @@ int main()
 	//keep listening for data
 	while(1)
 	{
-		printf("Waiting for data...");
 		fflush(stdout);
 
 		//try to receive some data, this is a blocking call
@@ -43,11 +42,10 @@ int main()
         uint64_t input = (uint64_t) buf;
         uint64_t output = prime_factor(input);
 
-        printf("input = %llu, output = %llu\n", input, output);
-
+        // printf("input = %llu, output = %llu\n", input, output);
 
 		//now reply the client with the same data
-		sendto(sock, buf, recv_len, 0, (struct sockaddr*) &si_other, slen);
+		// sendto(sock, buf, recv_len, 0, (struct sockaddr*) &si_other, slen);
 	}
 
 	close(sock);
