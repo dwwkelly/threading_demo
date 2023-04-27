@@ -35,6 +35,10 @@ int main()
     printf("printing list\n");
     print_queue(queue);
 
+    item = queue_pop(queue);
+    printf("%llu\n", item->data);
+    free((void*)item);
+
     free_queue(queue);
 
     return 0;

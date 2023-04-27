@@ -72,7 +72,7 @@ int main()
     thread_input->socket_lock = socket_lock;
 
     // Create threads
-    size_t n_threads = 4;
+    size_t n_threads = 8;
     pthread_t thread_array[n_threads];
     int counter = 0;
     for (counter=0; counter<n_threads; counter++)
