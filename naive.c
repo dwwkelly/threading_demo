@@ -15,7 +15,7 @@ int main()
     struct sockaddr_in si_me, si_other;
 
 	int sock, i, recv_len;
-    uint32_t slen = sizeof(si_other);
+        uint32_t slen = sizeof(si_other);
 	char buf[BUFLEN];
 
 	//create a UDP socket
@@ -39,10 +39,10 @@ int main()
 		//try to receive some data, this is a blocking call
 		recv_len = recvfrom(sock, buf, BUFLEN, 0, (struct sockaddr *) &si_other, &slen);
 
-        uint64_t input = (uint64_t) buf;
-        uint64_t output = prime_factor(input);
+                uint64_t input = (uint64_t) buf;
+                uint64_t output = prime_factor(input);
 
-        // printf("input = %llu, output = %llu\n", input, output);
+                // printf("input = %llu, output = %llu\n", input, output);
 
 		//now reply the client with the same data
 		// sendto(sock, buf, recv_len, 0, (struct sockaddr*) &si_other, slen);
